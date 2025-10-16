@@ -4,6 +4,7 @@ import "./App2.css";
 const App2 = () => {
     const [data,setData]=useState('');
     const [result,setResult]=useState(0);
+    const[error,setError]=useState(null);
     const handleButton = (e) => {
         console.log('button clicked', e.target.value);
         //setData(e.target.value);
@@ -11,7 +12,8 @@ const App2 = () => {
     }
     const handleCalculation = () => {
         if(data===''){
-            return 'Enter some value';
+            setError('Please enter some data');
+            return;
                 }
 setResult(eval(data));
     }
@@ -25,6 +27,7 @@ setResult(eval(data));
         <h2>React Calculator</h2>
         <div><input type="text" placeholder="0" readOnly value={data}/></div>
         <div>Result is here:{result}</div>
+        {error && <div>{error}</div>}
         <br />
 
         <button value='7' onClick={handleButton}>7</button>

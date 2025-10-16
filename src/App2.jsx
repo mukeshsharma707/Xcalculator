@@ -10,6 +10,9 @@ const App2 = () => {
         setData(data.concat(e.target.value));
     }
     const handleCalculation = () => {
+        if(data===''){
+            return 'Enter some value';
+                }
 setResult(eval(data));
     }
     const handleClear =()=>{

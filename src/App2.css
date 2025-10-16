@@ -9,6 +9,14 @@ body {
   margin: 0;
 }
 
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 8px;
+  transition: opacity 0.5s ease;
+}
+
+
 /* Calculator container */
 .calculator {
   background: #ffffff;

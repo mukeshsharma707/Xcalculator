@@ -11,10 +11,13 @@ const App2 = () => {
         setData(data.concat(e.target.value));
     }
     const handleCalculation = () => {
-        if(data===''){
-            setError('Please enter some data');
-            return;
-                }
+        
+
+if (!expression || /[+\-*/]$/.test(expression)) {
+setError("Error");
+return;
+}
+
 setResult(eval(data));
     }
     const handleClear =()=>{
